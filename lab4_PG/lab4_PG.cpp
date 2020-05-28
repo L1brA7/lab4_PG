@@ -20,8 +20,8 @@ int main()
         if (number == 1) {
             int N = N_INPUT();
             int *ARRAY = array_input(N);
-            array_out(ARRAY, N);
-            cout << min_negative(ARRAY, N) << endl;
+            printf("Array: "); array_out(ARRAY, N);
+            printf("Minimal negative element: %i\n", min_negative(ARRAY, N));
         }
         if (number == 2) {
             int N = N_INPUT();
@@ -108,12 +108,10 @@ int sum(int N, int I, int elem) {
 
 int funcF(int N) {
     if (N == 1) return 0;
-    int value = -4 * funcF(N - 1) + funcG(N - 1);
-    return value;
+    return -4 * funcF(N - 1) + funcG(N - 1);
 }
 
 int funcG(int N) {
     if (N == 1) return 1;
-    int value = -4 * funcF(N - 1) * funcG(N - 1);
-    return value;
+    return -4 * funcF(N - 1) * funcG(N - 1);
 }
